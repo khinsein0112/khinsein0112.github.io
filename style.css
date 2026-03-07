@@ -1,0 +1,408 @@
+/* ═══════════════════════════════════════
+   noah khin — personal blog
+   Hawley-inspired, blush pink + sage green (watermelon palette)
+   ═══════════════════════════════════════ */
+
+:root {
+    --blush: #F2DDD5;
+    --blush-light: #F9EFEB;
+    --blush-dark: #E8C4B8;
+    --green: #7A9E7E;
+    --green-light: #A8C5AB;
+    --green-dark: #5C7D60;
+    --charcoal: #2D2D2D;
+    --text: #3A3A3A;
+    --text-light: #7A7A7A;
+    --white: #FFFBF9;
+    --pink-bg: #FBEEE8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--blush-light);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── NAVIGATION ── */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 3rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--blush-light);
+    z-index: 100;
+}
+
+.site-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.site-name:hover {
+    color: var(--green-dark);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--green);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--green-dark);
+}
+
+/* ── HOME PAGE ── */
+.home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 10rem);
+    padding: 2rem;
+    background-color: var(--blush);
+    margin: 0 2rem;
+    border-radius: 4px;
+}
+
+.home-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.home-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 5rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.home-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home-link {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.home-link:hover {
+    color: var(--green);
+}
+
+/* ── PHOTOS PAGE ── */
+.page-header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+}
+
+.photo-feed {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem;
+}
+
+.photo-post {
+    margin-bottom: 4rem;
+}
+
+.photo-post img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+}
+
+.photo-caption {
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+.photo-caption .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.photo-caption p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ── WORDS PAGE ── */
+.words-feed {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem;
+}
+
+.word-post-preview {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--blush-dark);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.word-post-preview:first-child {
+    padding-top: 1rem;
+}
+
+.word-post-preview:hover {
+    opacity: 0.7;
+}
+
+.word-post-preview a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.word-post-preview .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.word-post-preview h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+}
+
+.word-post-preview .excerpt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ── INDIVIDUAL POST PAGE ── */
+.post-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+}
+
+.post-page .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.post-page h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.post-page .post-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.85;
+}
+
+.post-page .post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-page .post-body img {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 2px;
+}
+
+.post-page .post-body blockquote {
+    border-left: 2px solid var(--green-light);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.post-back {
+    display: inline-block;
+    margin-top: 3rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--green);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.post-back:hover {
+    color: var(--green-dark);
+}
+
+/* ── FOOTER ── */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    nav {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .site-name {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .home {
+        margin: 0 1rem;
+        min-height: calc(100vh - 8rem);
+    }
+
+    .home-title {
+        font-size: 3rem;
+    }
+
+    .home-link {
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .word-post-preview h2 {
+        font-size: 1.6rem;
+    }
+
+    .post-page h1 {
+        font-size: 2rem;
+    }
+
+    .photo-feed,
+    .words-feed,
+    .post-page {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-title {
+        font-size: 2.4rem;
+    }
+
+    .home-link {
+        font-size: 1.6rem;
+    }
+  }
