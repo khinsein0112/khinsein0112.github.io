@@ -1,7 +1,4 @@
-/* âââââââââââââââââââââââââââââââââââââââ
-   noah khin â personal blog
-   Hawley-inspired, blush pink + sage green (watermelon palette)
-   âââââââââââââââââââââââââââââââââââââââ */
+/* noah khin - personal blog */
 
 :root {
     --blush: #F2DDD5;
@@ -29,37 +26,34 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--blush-light);
     color: var(--text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ââ NAVIGATION ââ */
+/* -- NAV -- */
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1.8rem 3rem;
-    position: sticky;
-    top: 0;
-    background-color: var(--blush-light);
-    z-index: 100;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .site-name {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: var(--charcoal);
     text-decoration: none;
     letter-spacing: -0.02em;
-}
-
-.site-name:hover {
-    color: var(--green-dark);
 }
 
 .nav-links {
@@ -85,8 +79,8 @@ nav {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 1.5px;
-    background-color: var(--green);
+    height: 1px;
+    background: var(--green);
     transition: width 0.3s ease;
 }
 
@@ -95,125 +89,56 @@ nav {
     width: 100%;
 }
 
-.nav-links a:hover {
-    color: var(--green-dark);
-}
-
-/* ââ HOME PAGE ââ */
-.home {
+/* -- HOMEPAGE -- */
+.hero {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 10rem);
-    padding: 2rem;
-    background-color: var(--blush);
-    margin: 0 2rem;
-    border-radius: 4px;
+    padding: 4rem 2rem;
 }
 
-.home-hero {
+.hero-content {
     text-align: center;
-    margin-bottom: 4rem;
+    max-width: 600px;
 }
 
-.home-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 5rem;
-    font-weight: 400;
-    color: var(--charcoal);
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-}
-
-.home-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: var(--text-light);
-    letter-spacing: 0.15em;
-    text-transform: lowercase;
-}
-
-.home-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.home-link {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 3rem;
-    font-weight: 400;
-    color: var(--charcoal);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.home-link:hover {
-    color: var(--green);
-}
-
-/* ââ PHOTOS PAGE ââ */
-.page-header {
-    text-align: center;
-    padding: 4rem 2rem 2rem;
-}
-
-.page-header h1 {
+.hero-content h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.5rem;
     font-weight: 400;
     color: var(--charcoal);
     letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
-.photo-feed {
-    max-width: 900px;
+.hero-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+/* -- PHOTOS PAGE -- */
+.photo-grid {
+    max-width: 1000px;
     margin: 0 auto;
     padding: 1rem 2rem 4rem;
+    columns: 2;
+    column-gap: 1.5rem;
 }
 
-.photo-post {
-    margin-bottom: 4rem;
-}
-
-.photo-post img {
+.photo-grid img {
     width: 100%;
-    display: block;
+    margin-bottom: 1.5rem;
     border-radius: 2px;
+    display: block;
 }
 
-.photo-caption {
-    margin-top: 1rem;
-    padding: 0.5rem 0;
-}
-
-.photo-caption .date {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 400;
-    color: var(--green);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-}
-
-.photo-caption p {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1.6;
-    font-style: italic;
-}
-
-/* ââ WORDS PAGE ââ */
+/* -- WORDS PAGE -- */
 .words-feed {
     max-width: 700px;
     margin: 0 auto;
@@ -224,7 +149,7 @@ nav {
     display: block;
     text-decoration: none;
     color: inherit;
-    padding: 3rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--blush-dark);
     cursor: pointer;
     transition: opacity 0.3s ease;
@@ -234,16 +159,16 @@ nav {
     padding-top: 1rem;
 }
 
+.word-post-preview:last-child {
+    border-bottom: none;
+}
+
 .word-post-preview:hover {
     opacity: 0.7;
 }
 
-.word-post-preview a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.word-post-preview .date {
+.word-post-preview .date,
+.word-post-preview span {
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     font-weight: 400;
@@ -251,28 +176,30 @@ nav {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.6rem;
+    display: block;
 }
 
 .word-post-preview h2 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 400;
     color: var(--charcoal);
     letter-spacing: -0.02em;
     margin-bottom: 0.6rem;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
-.word-post-preview .excerpt,
-.word-post-preview p {
+.word-post-preview p,
+.word-post-preview .excerpt {
     font-family: 'Inter', sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     font-weight: 300;
     color: var(--text-light);
     line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 
-/* ââ INDIVIDUAL POST PAGE ââ */
+/* -- INDIVIDUAL POST PAGE -- */
 .post-page {
     max-width: 700px;
     margin: 0 auto;
@@ -291,7 +218,7 @@ nav {
 
 .post-page h1 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 400;
     color: var(--charcoal);
     letter-spacing: -0.02em;
@@ -311,6 +238,11 @@ nav {
     margin-bottom: 1.5rem;
 }
 
+.post-page .post-body strong {
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
 .post-page .post-body img {
     width: 100%;
     margin: 2rem 0;
@@ -325,28 +257,19 @@ nav {
     color: var(--text-light);
 }
 
-.post-back {
-    display: inline-block;
-    margin-top: 3rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    color: var(--green);
-    text-decoration: none;
-    letter-spacing: 0.05em;
+.post-page .post-body h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-.post-back:hover {
-    color: var(--green-dark);
-}
-
-/* ââ FOOTER ââ */
+/* -- FOOTER -- */
 footer {
     text-align: center;
     padding: 2rem;
-    margin-top: auto;
-}
-
-footer p {
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     font-weight: 300;
@@ -354,59 +277,46 @@ footer p {
     letter-spacing: 0.05em;
 }
 
-/* ââ RESPONSIVE ââ */
+/* -- RESPONSIVE -- */
 @media (max-width: 768px) {
     nav {
-        padding: 1.2rem 1.5rem;
+        padding: 1.5rem 1.5rem;
     }
 
     .site-name {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .nav-links {
         gap: 1.5rem;
     }
 
-    .home {
-        margin: 0 1rem;
-        min-height: calc(100vh - 8rem);
+    .nav-links a {
+        font-size: 0.8rem;
     }
 
-    .home-title {
-        font-size: 3rem;
-    }
-
-    .home-link {
-        font-size: 2rem;
-    }
-
-    .page-header h1 {
+    .hero-content h1 {
         font-size: 2.5rem;
     }
 
+    .photo-grid {
+        columns: 1;
+        padding: 1rem 1.5rem 3rem;
+    }
+
+    .words-feed {
+        padding: 1rem 1.5rem 3rem;
+    }
+
     .word-post-preview h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+
+    .post-page {
+        padding: 2rem 1.5rem 4rem;
     }
 
     .post-page h1 {
         font-size: 2rem;
     }
-
-    .photo-feed,
-    .words-feed,
-    .post-page {
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
-    }
 }
-
-@media (max-width: 480px) {
-    .home-title {
-        font-size: 2.4rem;
-    }
-
-    .home-link {
-        font-size: 1.6rem;
-    }
-  }
