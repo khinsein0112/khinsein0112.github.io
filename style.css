@@ -224,7 +224,7 @@ nav {
     display: block;
     text-decoration: none;
     color: inherit;
-    padding: 2.5rem 0;
+    padding: 3rem 0;
     border-bottom: 1px solid var(--blush-dark);
     cursor: pointer;
     transition: opacity 0.3s ease;
