@@ -1,7 +1,7 @@
-/* ═══════════════════════════════════════
-   noah khin — personal blog
+/* âââââââââââââââââââââââââââââââââââââââ
+   noah khin â personal blog
    Hawley-inspired, blush pink + sage green (watermelon palette)
-   ═══════════════════════════════════════ */
+   âââââââââââââââââââââââââââââââââââââââ */
 
 :root {
     --blush: #F2DDD5;
@@ -37,7 +37,7 @@ body {
     flex-direction: column;
 }
 
-/* ── NAVIGATION ── */
+/* ââ NAVIGATION ââ */
 nav {
     display: flex;
     justify-content: space-between;
@@ -99,7 +99,7 @@ nav {
     color: var(--green-dark);
 }
 
-/* ── HOME PAGE ── */
+/* ââ HOME PAGE ââ */
 .home {
     flex: 1;
     display: flex;
@@ -159,7 +159,7 @@ nav {
     color: var(--green);
 }
 
-/* ── PHOTOS PAGE ── */
+/* ââ PHOTOS PAGE ââ */
 .page-header {
     text-align: center;
     padding: 4rem 2rem 2rem;
@@ -169,3 +169,244 @@ nav {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.5rem;
     font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+}
+
+.photo-feed {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem;
+}
+
+.photo-post {
+    margin-bottom: 4rem;
+}
+
+.photo-post img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+}
+
+.photo-caption {
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+.photo-caption .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.photo-caption p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ââ WORDS PAGE ââ */
+.words-feed {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem;
+}
+
+.word-post-preview {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--blush-dark);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.word-post-preview:first-child {
+    padding-top: 1rem;
+}
+
+.word-post-preview:hover {
+    opacity: 0.7;
+}
+
+.word-post-preview a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.word-post-preview .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.word-post-preview h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+}
+
+.word-post-preview .excerpt,
+.word-post-preview p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ââ INDIVIDUAL POST PAGE ââ */
+.post-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+}
+
+.post-page .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.post-page h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.post-page .post-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.85;
+}
+
+.post-page .post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-page .post-body img {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 2px;
+}
+
+.post-page .post-body blockquote {
+    border-left: 2px solid var(--green-light);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.post-back {
+    display: inline-block;
+    margin-top: 3rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--green);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.post-back:hover {
+    color: var(--green-dark);
+}
+
+/* ââ FOOTER ââ */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+/* ââ RESPONSIVE ââ */
+@media (max-width: 768px) {
+    nav {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .site-name {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .home {
+        margin: 0 1rem;
+        min-height: calc(100vh - 8rem);
+    }
+
+    .home-title {
+        font-size: 3rem;
+    }
+
+    .home-link {
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .word-post-preview h2 {
+        font-size: 1.6rem;
+    }
+
+    .post-page h1 {
+        font-size: 2rem;
+    }
+
+    .photo-feed,
+    .words-feed,
+    .post-page {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-title {
+        font-size: 2.4rem;
+    }
+
+    .home-link {
+        font-size: 1.6rem;
+    }
+  }
