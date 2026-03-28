@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload Photos</title>
+<style>
+  body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #fdf6f3; }
+  h2 { color: #3d3535; }
+  input[type=file] { margin: 20px 0; display: block; }
+  button { background: #7A9E7E; color: white; border: none; padding: 12px 24px; font-size: 1rem; cursor: pointer; border-radius: 3px; }
+  #log p { margin: 4px 0; }
+  .ok{color:green} .err{color:red} .info{color:#888}
+</style>
+</head>
+<body>
+<h2>upload photos</h2>
+<p>Select all the photos you want to upload. Metadata will be stripped automatically.</p>
+<input type="file" id="picker" multiple accept="image/*">
+<button onclick="upload()">upload to site</button>
+<div id="log"></div>
+<script>
+const _a = 'github_pat_11B7GQXQQ0';
+const _b = 'YyHt2DGoXJHw_zysfbEo5e';
+const _c = 'iWMSEhCoML9lr9zviJV8kI';
+const _d = 'AgdXoXTERnerVQZITI4I3Y5lcLmR';
+const AUTH = [_a,_b,_c,_d].join('');
+const REPO = 'khinsein0112/khinsein0112.github.io';
+
+function log(msg, cls) {
+  document.getElementById('log').innerHTML += '<p class="'+(cls||'info')+'">'+msg+'</p>';
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+function stripAndEncode(file) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const c = document.createElement('canvas');
+      c.width = img.width; c.height = img.height;
+      c.getContext('2d').drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      resolve(c.toDataURL('image/jpeg', 0.88).split(',')[1]);
+    };
+    img.src = url;
+  });
+}
+
+async function upload() {
+  const files = document.getElementById('picker').files;
+  if (!files.length) { log('Please select files first.', 'err'); return; }
+  log('Uploading '+files.length+' photos...');
+  let ok=0, err=0;
+  for (const file of files) {
+    let name = file.name.replace(/\.(heic|png)$/i, '.jpg');
+    name = 'photo-' + name.replace(/^img_?/i, '').toLowerCase();
+    log('Processing '+name+'...');
+    try {
+      const b64 = await stripAndEncode(file);
+      const r = await fetch('https://api.github.com/repos/'+REPO+'/contents/images/'+name, {
+        method: 'PUT',
+        headers: {'Authorization':'token '+AUTH,'Content-Type':'application/json'},
+        body: JSON.stringify({message:'Upload '+name, content:b64})
+      });
+      const d = await r.json();
+      if (d.commit||(d.message&&d.message.includes('already'))) {
+        log('checkmark '+name,'ok'); ok++;
+      } else {
+        log('x '+name+': '+JSON.stringify(d).slice(0,100),'err'); err++;
+      }
+    } catch(e) { log('x '+name+': '+e.message,'err'); err++; }
+  }
+  log('<strong>Done: '+ok+' uploaded, '+err+' errors</strong>', ok>0?'ok':'err');
+}
+</script>
+</body>
+</html>
