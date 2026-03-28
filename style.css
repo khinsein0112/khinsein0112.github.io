@@ -345,6 +345,11 @@ footer {
 
 /* -- RESPONSIVE -- */
 @media (max-width: 768px) {
+    .photo-grid {
+        gap: 3px;
+        padding: 0;
+    }
+
     nav {
         padding: 1.5rem 1.5rem;
     }
