@@ -1,0 +1,28 @@
+<svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A62E28"/><stop offset="1" stop-color="#831F1B"/>
+    </linearGradient>
+    <linearGradient id="bun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF8F2"/><stop offset="1" stop-color="#EADFCB"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" fill="url(#bg)"/>
+  <!-- steam -->
+  <g fill="none" stroke="#F3DFB4" stroke-width="6" stroke-linecap="round" opacity=".72">
+    <path d="M69 40 C63 32 75 27 69 19"/>
+    <path d="M90 34 C84 26 96 21 90 13"/>
+    <path d="M111 40 C105 32 117 27 111 19"/>
+  </g>
+  <!-- bun body -->
+  <path d="M90 62 C126 62 150 84 150 111 C150 132 133 145 90 145 C47 145 30 132 30 111 C30 84 54 62 90 62 Z" fill="url(#bun)"/>
+  <!-- pinched top -->
+  <path d="M78 68 C80 55 100 55 102 68 Z" fill="#EADFCB"/>
+  <circle cx="90" cy="60" r="9" fill="#F6F1E6"/>
+  <!-- pleats -->
+  <g fill="none" stroke="#CDBFA4" stroke-width="4" stroke-linecap="round" opacity=".85">
+    <path d="M90 70 C90 96 90 118 90 138"/>
+    <path d="M62 76 C56 100 55 120 58 138"/>
+    <path d="M118 76 C124 100 125 120 122 138"/>
+  </g>
+</svg>
